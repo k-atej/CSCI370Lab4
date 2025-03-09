@@ -148,11 +148,11 @@ Transform:
   m_GameObject: {fileID: 11707701}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.097, y: 0.7, z: -10.672}
+  m_LocalPosition: {x: -0.034, y: 1.6359999, z: -0.007287979}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 165585136}
+  m_Father: {fileID: 1934505215}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &11707703
 MonoBehaviour:
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBody: {fileID: 1934505215}
-  mouseSensitivity: 100
+  mouseSensitivity: 300
   lockCursor: 1
   cameraHeight: 2
 --- !u!114 &11707704
@@ -322,7 +322,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1934505215}
-  - {fileID: 11707702}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &165585137
@@ -592,7 +591,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 59a21835c678bcf43afbce3fdf17d3f5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 11707702}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59a21835c678bcf43afbce3fdf17d3f5, type: 3}
 --- !u!1 &1536887183
