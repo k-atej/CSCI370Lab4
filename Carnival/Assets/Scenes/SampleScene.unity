@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 11707704}
   - component: {fileID: 11707703}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: MainCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -656,9 +656,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0975868bd6530498393e57f15928a048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spheres: {fileID: 1463877758258098082, guid: 0b7acd417e4b14e9f9adadf17acf0fa7, type: 3}
-  throwForce: 10
+  dartPrefab: {fileID: 1463877758258098082, guid: 0b7acd417e4b14e9f9adadf17acf0fa7, type: 3}
+  throwForce: 1
   mainCamera: {fileID: 11707706}
+  throwCooldown: 0.5
 --- !u!1001 &1647469650
 PrefabInstance:
   m_ObjectHideFlags: 0
