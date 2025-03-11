@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4585703251434483993}
   - component: {fileID: -1190755359767576222}
   - component: {fileID: 3757724808658887415}
+  - component: {fileID: -23980200029206542}
   m_Layer: 0
   m_Name: Dart
   m_TagString: Untagged
@@ -150,3 +151,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 300
+--- !u!114 &-23980200029206542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463877758258098082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a6d4f02893146a0a82a27e8ec0bb08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dart: {fileID: 1463877758258098082}
