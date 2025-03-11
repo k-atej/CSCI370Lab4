@@ -554,6 +554,7 @@ GameObject:
   - component: {fileID: 165585135}
   - component: {fileID: 165585137}
   - component: {fileID: 165585138}
+  - component: {fileID: 165585139}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -586,7 +587,7 @@ Transform:
   m_GameObject: {fileID: 165585134}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.003, y: 0.938, z: 1.101}
+  m_LocalPosition: {x: -0.006, y: 0.976, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -617,7 +618,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.1
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.1, z: 0}
+  m_Center: {x: 0, y: 0.1, z: -9.5}
 --- !u!114 &165585138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,6 +635,23 @@ MonoBehaviour:
   respawnPosition: {x: 0, y: 0.5, z: 0}
   groundCheckDistance: 0.2
   groundLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &165585139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165585134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55a0a9da49afcb149abc1ee4ec5ba8c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skinWidth: 0.08
+  groundedCheckDistance: 0.2
+  groundLayers:
     serializedVersion: 2
     m_Bits: 4294967295
 --- !u!1 &353171941
@@ -1494,15 +1512,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 59a21835c678bcf43afbce3fdf17d3f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.063
+      value: 0.075
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 59a21835c678bcf43afbce3fdf17d3f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.936
+      value: -0.924
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 59a21835c678bcf43afbce3fdf17d3f5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.664712
+      value: -9.486
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 59a21835c678bcf43afbce3fdf17d3f5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1617,15 +1635,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 634753d797b664938a86ef80a4fd473d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -0.0002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 634753d797b664938a86ef80a4fd473d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.19
+      value: 0.039
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 634753d797b664938a86ef80a4fd473d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.02
+      value: 4.71
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 634753d797b664938a86ef80a4fd473d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1751,14 +1769,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1767786159
-MeshCollider:
+--- !u!65 &1767786159
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767786154}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1fb684ac7e592a24ba5be19e09bd3487, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1769,10 +1787,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 3
+  m_Size: {x: 10, y: 0.2, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1934505215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 59a21835c678bcf43afbce3fdf17d3f5, type: 3}
