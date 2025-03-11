@@ -62,5 +62,7 @@ public class ThrowForce : MonoBehaviour
             // Add a small amount of torque for realistic dart flight
             rigidbody_m.AddTorque(new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f)), ForceMode.Impulse);
         }
+
+
     }
 }

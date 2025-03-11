@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Throw : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Throw : MonoBehaviour
     // Cooldown to prevent spamming darts
     public float throwCooldown = 0.5f;
     private float lastThrowTime = 0f;
+
+    public TrackDarts trackDarts;
     
     void Start()
     {
@@ -67,7 +70,7 @@ public class Throw : MonoBehaviour
         
         // Instantiate the dart
         GameObject dart = Instantiate(dartPrefab, adjustedPosition, spawnRotation);
-        
+
         // Ensure the dart has a ThrowForce component
         ThrowForce throwForceComponent = dart.GetComponent<ThrowForce>();
         if (throwForceComponent != null)
@@ -78,5 +81,8 @@ public class Throw : MonoBehaviour
         {
             Debug.LogWarning("Dart prefab doesn't have a ThrowForce component!");
         }
+
+        trackDarts.Increment();
+
     }
 }

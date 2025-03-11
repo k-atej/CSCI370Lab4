@@ -19,6 +19,8 @@ public class DeleteDart : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Destroy(dart);        
+        // this is super buggy, so turning it off for now
+        // maybe better to delete all darts when balloons are reset
+        //Destroy(dart);        
     }
 }
