@@ -29,5 +29,13 @@ public class TrackDarts : MonoBehaviour
         dartCounter.SetText(count.ToString());
     }
 
+    public void Reset()
+    {
+        Debug.Log("resetting counter");
+        count = 0;
+        dartCounter.SetText(count.ToString());
+
+    }
+
 
 }
