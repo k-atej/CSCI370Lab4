@@ -1068,21 +1068,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[Explain movement of player here]
+  m_text: 'Move player with WASD. Press space to jump.
 
 
-    [Explain movement of camera here]
-
-
-    [Explain
-    how to throw things here]
-
-
-    [Explain how to talk (?) here]
+    Click to throw a dart.
 
 
     [Explain
-    how to pause here]'
+    how to talk (?) here]
+
+
+    Pause and unpause with the ESC key.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
