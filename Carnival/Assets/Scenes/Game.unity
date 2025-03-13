@@ -2014,6 +2014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   balloon: {fileID: 2346095561133664942, guid: 3763f3535841a4842bfe341f2eba7b74, type: 3}
+  PauseMenu: {fileID: 1218377808}
   position: {x: 0, y: 2.1, z: 4.75}
   track: {fileID: 1536887188}
 --- !u!114 &1536887187
@@ -2031,6 +2032,7 @@ MonoBehaviour:
   dartPrefab: {fileID: 1463877758258098082, guid: 0b7acd417e4b14e9f9adadf17acf0fa7, type: 3}
   throwForce: 1
   mainCamera: {fileID: 11707706}
+  PauseMenu: {fileID: 1218377808}
   throwCooldown: 0.5
   trackDarts: {fileID: 1536887188}
 --- !u!114 &1536887188
