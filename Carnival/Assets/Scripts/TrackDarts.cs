@@ -13,8 +13,8 @@ public class TrackDarts : MonoBehaviour
 
     void Start()
     {
-        dartCounter.SetText("0");
-        count = 0;
+        dartCounter.SetText("30");
+        count = 30;
     }
 
     // Update is called once per frame
@@ -25,8 +25,20 @@ public class TrackDarts : MonoBehaviour
 
     public void Increment(){
         Debug.Log("called increment");
-        count += 1;
+        count -= 1;
         dartCounter.SetText(count.ToString());
+    }
+
+    public void Reset()
+    {
+        Debug.Log("resetting counter");
+        count = 30;
+        dartCounter.SetText(count.ToString());
+
+    }
+
+    public int getCount(){
+        return count;
     }
 
 

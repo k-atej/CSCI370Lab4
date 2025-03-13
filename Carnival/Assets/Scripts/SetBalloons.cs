@@ -10,6 +10,8 @@ public class SetBalloons : MonoBehaviour
     public Vector3 position;
     private bool active = false;
     private List<Vector3> positions = new List<Vector3>();
+
+    public TrackDarts track;
     void Start()
     {   // generates list of positions to put balloons at
         int count = 0;
@@ -39,6 +41,7 @@ public class SetBalloons : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E)){ // can be changed in the future to be a start button or something
             if (!active){
+                Clear();
                 Generate();
             }
             
@@ -54,6 +57,21 @@ public class SetBalloons : MonoBehaviour
             Instantiate(balloon, positions[i], Quaternion.Euler(270,0,0));
         }
         // generates a 9 column, 3 row array of balloons
+    }
+
+    void Clear(){ //removes existing balloons and darts
+        GameObject[] taggedDarts = GameObject.FindGameObjectsWithTag("Dart");
+        foreach (GameObject drt in taggedDarts)
+        {
+            Destroy(drt);
+        }
+
+        GameObject[] taggedBalloons = GameObject.FindGameObjectsWithTag("Balloon");
+        foreach (GameObject blln in taggedBalloons)
+        {
+            Destroy(blln);
+        }
+        track.Reset();
     }
 
 

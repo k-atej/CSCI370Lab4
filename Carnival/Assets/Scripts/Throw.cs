@@ -47,8 +47,11 @@ public class Throw : MonoBehaviour
         // Check for left mouse button click and ensure cooldown has passed
         if (Input.GetMouseButtonDown(0) && Time.time > lastThrowTime + throwCooldown)
         {
-            ThrowDart();
-            lastThrowTime = Time.time;
+            if (trackDarts.getCount() > 0) {
+                ThrowDart();
+                lastThrowTime = Time.time;
+            }
+            
         }
     }
     
