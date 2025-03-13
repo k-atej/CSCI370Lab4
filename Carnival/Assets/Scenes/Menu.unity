@@ -1204,17 +1204,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Move player with WASD. Press space to jump.
-
-
-    Click to throw a dart.
-
-
-    [Explain
-    how to talk (?) here]
-
-
-    Pause and unpause with the ESC key.'
+  m_text: "Move player with WASD. \n\nPress space to jump.\n\nClick to throw a dart.\n\nPress
+    E to talk.\n\nPause and unpause with the ESC key."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d0ced2e1420374231aa2dfd272f7676c, type: 2}
   m_sharedMaterial: {fileID: -8325309375612654743, guid: d0ced2e1420374231aa2dfd272f7676c, type: 2}
@@ -1328,7 +1319,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 220}
+  m_SizeDelta: {x: 600, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &497504305
 MonoBehaviour:
@@ -1350,7 +1341,44 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[Put in asset information here]'
+  m_text: 'Men Screen - https://tinyurl.com/ay2apdxn
+
+
+    Font - https://www.fontspace.com/chrusty-rock-font-f35152
+
+
+    Music
+    - ???
+
+
+    Dart Stall - https://sketchfab.com/3d-models/stylized-carnival-booth-d8b4a661d433u494184403c621818a424
+
+
+    Balloons
+    - https://assetstore.unity.com/packages/3d/props/balloons-307245
+
+
+    Food Stalls
+    - https://www.cgtrader.com/free-3d-models/exterior/historic-exterior/market-stall-beer-bread-and-pretzels
+
+
+    Fence
+    - https://www.cgtrader.com/free-3d-models/various/various-models/medieval-51-item-pack-detailed
+
+
+    Terrain
+    & Grass - https://tinyurl.com/2ctsus7y
+
+
+    Trees - https://assetstore.unity.com/packages/3d/vegetation/trees/realistic-tree-9-rainbow-tree-54622
+
+
+    Sky
+    - https://assetstore.unity.com/packages/2d/textures-materials/sky/allsky-free-10-sky-skybox-set-146014
+
+
+    NPC
+    - ???'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d0ced2e1420374231aa2dfd272f7676c, type: 2}
   m_sharedMaterial: {fileID: -8325309375612654743, guid: d0ced2e1420374231aa2dfd272f7676c, type: 2}
@@ -1377,14 +1405,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
