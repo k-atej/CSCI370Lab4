@@ -27,7 +27,6 @@ public class Stick : MonoBehaviour
                     //Debug.Log("CALLING:" + bar);
                     rb = GetComponent<Rigidbody>();
                     rb.isKinematic = true;
-                    rb.linearVelocity = Vector3.zero;
                 }
             }
         }
