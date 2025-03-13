@@ -33,6 +33,10 @@ public class FPSCamera : MonoBehaviour
     
     void LateUpdate()
     {
+        // Skip camera controls if dialog is active or game is paused
+        if (DialogSystem.IsDialogActive || PauseMenu.IsPaused)
+            return;
+            
         // Get mouse input
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
