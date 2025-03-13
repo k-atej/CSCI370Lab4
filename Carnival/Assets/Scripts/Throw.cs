@@ -11,6 +11,7 @@ public class Throw : MonoBehaviour
     
     // Reference to the camera (will be found automatically if not assigned)
     public Camera mainCamera;
+    public GameObject PauseMenu;
     
     // Cooldown to prevent spamming darts
     public float throwCooldown = 0.5f;
@@ -47,10 +48,15 @@ public class Throw : MonoBehaviour
         // Check for left mouse button click and ensure cooldown has passed
         if (Input.GetMouseButtonDown(0) && Time.time > lastThrowTime + throwCooldown)
         {
-            if (trackDarts.getCount() > 0) {
+            if (PauseMenu.activeSelf != true)
+            {
+                if (trackDarts.getCount() > 0) {
                 ThrowDart();
                 lastThrowTime = Time.time;
             }
+
+            }
+            
             
         }
     }

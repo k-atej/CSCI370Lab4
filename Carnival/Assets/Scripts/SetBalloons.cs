@@ -7,6 +7,7 @@ public class SetBalloons : MonoBehaviour
 {
 
     public GameObject balloon;
+    public GameObject PauseMenu;
     public Vector3 position;
     private bool active = false;
     private List<Vector3> positions = new List<Vector3>();
@@ -39,6 +40,8 @@ public class SetBalloons : MonoBehaviour
 
     void Update()
     {
+        if (PauseMenu.activeSelf != true)
+            {
         if (Input.GetKeyDown(KeyCode.E)){ // can be changed in the future to be a start button or something
             if (!active){
                 Clear();
@@ -46,7 +49,7 @@ public class SetBalloons : MonoBehaviour
             }
             
         }
-        
+            }
     }
 
     void Generate(){
