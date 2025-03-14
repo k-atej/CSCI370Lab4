@@ -1204,8 +1204,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Move player with WASD. \n\nPress space to jump.\n\nClick to throw a dart.\n\nPress
-    E to talk.\n\nPause and unpause with the ESC key."
+  m_text: "Move player with WASD. \n\nPress space to jump.\n\nLeft Click to throw
+    a dart.\n\nPress 'E' to Spawn Balloons.\n\nPress 'F' to talk with NPC.\n\nPause
+    and unpause with the ESC key."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d0ced2e1420374231aa2dfd272f7676c, type: 2}
   m_sharedMaterial: {fileID: -8325309375612654743, guid: d0ced2e1420374231aa2dfd272f7676c, type: 2}
@@ -1378,7 +1379,7 @@ MonoBehaviour:
 
 
     NPC
-    - ???'
+    - https://www.mixamo.com/#/?page=1&query=wave&type=Motion%2CMotionPack'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d0ced2e1420374231aa2dfd272f7676c, type: 2}
   m_sharedMaterial: {fileID: -8325309375612654743, guid: d0ced2e1420374231aa2dfd272f7676c, type: 2}
@@ -2241,7 +2242,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[Game Title]'
+  m_text: Carnival
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d0ced2e1420374231aa2dfd272f7676c, type: 2}
   m_sharedMaterial: {fileID: -8325309375612654743, guid: d0ced2e1420374231aa2dfd272f7676c, type: 2}
