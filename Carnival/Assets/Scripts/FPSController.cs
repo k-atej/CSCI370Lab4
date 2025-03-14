@@ -24,6 +24,10 @@ public class FPSController : MonoBehaviour
 
     void Update()
     {
+        // Skip controls if dialog is active
+        if (DialogSystem.IsDialogActive || PauseMenu.IsPaused)
+            return;
+            
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
@@ -52,6 +56,10 @@ public class FPSController : MonoBehaviour
 
     void MouseAiming()
     {
+        // Skip mouse aiming if dialog is active
+        if (DialogSystem.IsDialogActive || PauseMenu.IsPaused)
+            return;
+            
         // get the mouse inputs
         float y = Input.GetAxis("Mouse X") * turnSpeed;
         rotX += Input.GetAxis("Mouse Y") * turnSpeed;

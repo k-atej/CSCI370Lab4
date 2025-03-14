@@ -46,18 +46,14 @@ public class Throw : MonoBehaviour
     void Update()
     {
         // Check for left mouse button click and ensure cooldown has passed
-        if (Input.GetMouseButtonDown(0) && Time.time > lastThrowTime + throwCooldown)
+        // Also check that DialogSystem is not active and game is not paused
+        if (Input.GetMouseButtonDown(0) && Time.time > lastThrowTime + throwCooldown && 
+            !DialogSystem.IsDialogActive && PauseMenu.activeSelf != true)
         {
-            if (PauseMenu.activeSelf != true)
-            {
-                if (trackDarts.getCount() > 0) {
+            if (trackDarts.getCount() > 0) {
                 ThrowDart();
                 lastThrowTime = Time.time;
             }
-
-            }
-            
-            
         }
     }
     
@@ -92,6 +88,5 @@ public class Throw : MonoBehaviour
         }
 
         trackDarts.Increment();
-
     }
 }
