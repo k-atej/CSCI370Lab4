@@ -16,7 +16,7 @@ Narrative Structure:
 
 Mechanics:
 
-The player navigates the scene with WASD & Space. The player can throw balls by clicking on the screen. Hitting a balloon will cause it to pop. Players begin with 30 darts and must reset the balloons in order to get more.
+The player navigates the scene with WASD & Space. The player can throw balls by clicking on the screen. Hitting a balloon will cause it to pop. Players begin with 30 darts and must reset the balloons in order to get more. Players can talk with the NPC by walking up to him and pressing 'F' on the keyboard.
 
 
 
@@ -39,5 +39,7 @@ Attributions:
 Contributions:
 
 Kate worked on the mechanics of the carnival game itself, including resetting the balloons and darts, and setting up the booth for the game to be played. 
+
+Joseph worked on getting the Player model and NPC model set up, as well as animations and dialog for the NPC. Joseph created the movement system and the camera follow for the player.
 
 
