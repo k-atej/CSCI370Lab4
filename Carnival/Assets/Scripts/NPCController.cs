@@ -24,14 +24,23 @@ public class NPCController : MonoBehaviour
     [TextArea(3, 5)]
     public string[] dialogLines;
     
+    [Header("Options")]
+    [Tooltip("Whether the NPC should rotate to face the player")]
+    public bool shouldRotateToPlayer = false;
+    
     // References
     private Transform playerTransform;
     private DialogSystem dialogSystem;
     private bool playerInRange = false;
     private bool hasInteracted = false; // Track if player has already interacted
+    private bool isWaving = false; // Track if the NPC is currently waving
+    private Vector3 originalRotation; // Store original rotation
     
     void Start()
     {
+        // Store original rotation
+        originalRotation = transform.eulerAngles;
+        
         // Find the player by tag
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
@@ -40,7 +49,7 @@ public class NPCController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Player not found! Make sure the player has the 'Player' tag.");
+            Debug.LogError("Player not found! Make sure your player has the 'Player' tag.");
         }
         
         // Get the dialog system
@@ -61,6 +70,21 @@ public class NPCController : MonoBehaviour
         {
             dialogUI.SetActive(false);
         }
+        
+        // Auto-find animator if not set
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
+            if (animator == null)
+            {
+                // Try to find in children
+                animator = GetComponentInChildren<Animator>();
+                if (animator == null)
+                {
+                    Debug.LogError("No Animator found on this GameObject or its children!");
+                }
+            }
+        }
     }
     
     void Update()
@@ -71,6 +95,7 @@ public class NPCController : MonoBehaviour
         // Handle interaction input
         if (playerInRange && Input.GetKeyDown(interactionKey))
         {
+            Debug.Log("Player pressed F key near NPC");
             TriggerDialog();
         }
     }
@@ -90,6 +115,7 @@ public class NPCController : MonoBehaviour
         if (inRange != playerInRange)
         {
             playerInRange = inRange;
+            Debug.Log("Player in range changed: " + playerInRange);
             
             // Show/hide interaction indicator (only if player hasn't interacted yet)
             if (interactionIndicator != null)
@@ -97,32 +123,76 @@ public class NPCController : MonoBehaviour
                 interactionIndicator.SetActive(playerInRange && !hasInteracted);
             }
             
-            // Make NPC look at player when in range
             if (playerInRange)
             {
-                // Look at player but keep y position the same
-                Vector3 targetPosition = new Vector3(
-                    playerTransform.position.x,
-                    transform.position.y,
-                    playerTransform.position.z
-                );
-                transform.LookAt(targetPosition);
-                
-                // Trigger "notice" animation
-                if (animator != null)
+                // Look at player but keep y position the same - ONLY if rotation is enabled
+                if (!hasInteracted && shouldRotateToPlayer)
                 {
-                    animator.SetTrigger("Notice");
+                    LookAtPlayer();
+                }
+                
+                // Start waving when player enters range and hasn't interacted yet
+                if (!hasInteracted && !isWaving && animator != null)
+                {
+                    StartWaving();
+                }
+            }
+            else
+            {
+                // Player left range, stop waving if they haven't interacted yet
+                if (!hasInteracted && isWaving && animator != null)
+                {
+                    StopWaving();
+                }
+                
+                // Return to original rotation when player leaves range (if rotation is enabled)
+                if (!hasInteracted && shouldRotateToPlayer)
+                {
+                    ReturnToOriginalRotation();
                 }
             }
         }
+    }
+    
+    void LookAtPlayer()
+    {
+        // Look at player but keep y position the same
+        Vector3 targetPosition = new Vector3(
+            playerTransform.position.x,
+            transform.position.y,
+            playerTransform.position.z
+        );
+        
+        // Calculate direction to player
+        Vector3 directionToPlayer = targetPosition - transform.position;
+        directionToPlayer.y = 0; // Keep on same vertical plane
+        
+        // Only rotate if we have a valid direction
+        if (directionToPlayer != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(directionToPlayer);
+        }
+    }
+    
+    void ReturnToOriginalRotation()
+    {
+        transform.eulerAngles = originalRotation;
     }
     
     void TriggerDialog()
     {
         if (dialogSystem != null && dialogLines.Length > 0)
         {
+            Debug.Log("Triggering dialog with " + dialogLines.Length + " lines");
+            
             // Mark that player has interacted
             hasInteracted = true;
+            
+            // Stop waving animation
+            if (isWaving && animator != null)
+            {
+                StopWaving();
+            }
             
             // Send the dialog lines to the dialog system
             dialogSystem.ShowDialog(dialogLines);
@@ -132,32 +202,46 @@ public class NPCController : MonoBehaviour
             {
                 interactionIndicator.SetActive(false);
             }
-            
-            // Play talking animation
-            if (animator != null)
-            {
-                animator.SetBool("Talking", true);
-            }
+        }
+        else
+        {
+            Debug.LogError("Dialog system or dialog lines not set up properly!");
+            if (dialogSystem == null) Debug.LogError("DialogSystem is null");
+            if (dialogLines == null || dialogLines.Length == 0) Debug.LogError("No dialog lines defined");
         }
     }
     
     // Called from DialogSystem when dialog is closed
     public void OnDialogClosed()
     {
-        // Stop talking animation
-        if (animator != null)
-        {
-            animator.SetBool("Talking", false);
+        Debug.Log("Dialog closed callback received");
+    }
+    
+    // Helper methods for waving animation
+    private void StartWaving()
+    {
+        Debug.Log("Starting wave animation");
+        try {
+            animator.SetBool("Waving", true);
+            isWaving = true;
         }
-        
-        // Show interaction indicator again if player is still in range AND hasn't interacted
-        if (playerInRange && !hasInteracted && interactionIndicator != null)
-        {
-            interactionIndicator.SetActive(true);
+        catch (System.Exception e) {
+            Debug.LogError("Error setting Waving parameter: " + e.Message);
         }
     }
     
-    // Visualize the interaction range in the editor
+    private void StopWaving()
+    {
+        Debug.Log("Stopping wave animation");
+        try {
+            animator.SetBool("Waving", false);
+            isWaving = false;
+        }
+        catch (System.Exception e) {
+            Debug.LogError("Error clearing Waving parameter: " + e.Message);
+        }
+    }
+    
     // Public method to reset interaction state (call this if you want to enable re-interaction)
     public void ResetInteraction()
     {
@@ -167,9 +251,16 @@ public class NPCController : MonoBehaviour
         if (interactionIndicator != null && playerInRange)
         {
             interactionIndicator.SetActive(true);
+            
+            // Start waving again if player is in range
+            if (!isWaving && animator != null)
+            {
+                StartWaving();
+            }
         }
     }
     
+    // Visualize the interaction range in the editor
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;

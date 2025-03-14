@@ -1574,8 +1574,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 763709281}
-  - component: {fileID: 763709280}
-  - component: {fileID: 763709279}
+  - component: {fileID: 763709282}
+  - component: {fileID: 763709283}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -1583,51 +1583,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &763709279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 763709278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d4928a3edf96b64586049f59ba1f7c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionRange: 15
-  dialogUI: {fileID: 1754557786}
-  interactionKey: 102
-  interactionIndicator: {fileID: 974379838}
-  animator: {fileID: 763709280}
-  dialogLines:
-  - Why hello there stranger!
-  - Lets play a game of darts!!
-  - I will give you 20 darts, and I would like you to hit all the balloons on that
-    there backboard.
-  - Oh right, whenever you're ready stranger, press 'e' on that keyboard of yours.
---- !u!95 &763709280
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 763709278}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &763709281
 Transform:
   m_ObjectHideFlags: 0
@@ -1645,6 +1600,52 @@ Transform:
   - {fileID: 958104401}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 145.968, z: 0}
+--- !u!95 &763709282
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763709278}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ae43e06a28013840b01c8761958ee1e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &763709283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763709278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4928a3edf96b64586049f59ba1f7c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRange: 15
+  dialogUI: {fileID: 1754557786}
+  interactionKey: 102
+  interactionIndicator: {fileID: 974379838}
+  animator: {fileID: 763709282}
+  dialogLines:
+  - Why hello there stranger!
+  - Lets play a game of darts, I will give you 30 darts for you to throw there at
+    that backboard
+  - Oh right, whenever you are ready stranger, press 'e' on the keyboard to whip
+    up those balloons.
+  shouldRotateToPlayer: 0
 --- !u!1 &782400869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,6 +1969,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 221024f00a2b5584dbb6175fc073a829, type: 3}
       insertIndex: -1
       addedObject: {fileID: 880795353}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 221024f00a2b5584dbb6175fc073a829, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 880795356}
   m_SourcePrefab: {fileID: 100100000, guid: 221024f00a2b5584dbb6175fc073a829, type: 3}
 --- !u!4 &880795350 stripped
 Transform:
@@ -2002,6 +2006,28 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!95 &880795356
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880795351}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ae43e06a28013840b01c8761958ee1e, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 1
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &908397079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2909,7 +2935,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1754557787
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3087,6 +3113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1874806103}
   - component: {fileID: 1874806102}
+  - component: {fileID: 1874806104}
   m_Layer: 0
   m_Name: DialogSystem
   m_TagString: Untagged
@@ -3129,6 +3156,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1874806104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874806101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e659a4dd97b8f438dd8cd8912162f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1934505215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 59a21835c678bcf43afbce3fdf17d3f5, type: 3}
