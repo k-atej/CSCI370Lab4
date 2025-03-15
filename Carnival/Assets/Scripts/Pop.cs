@@ -2,24 +2,42 @@ using UnityEngine;
 
 public class Pop : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    
     public GameObject balloon;
-
+    
+    // Optional: Add particle effects or sounds when balloon pops
+    [Header("Pop Effects")]
+    public GameObject popEffect;
+    public AudioClip popSound;
+    
     void Start()
     {
         
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         
     }
-
+    
     void OnCollisionEnter(Collision collision)
     {
-        //play some kind of animation here?
-        Destroy(balloon);
+        // Check if the balloon reference exists
+        if (balloon != null)
+        {
+            // Create pop effect if assigned
+            if (popEffect != null)
+            {
+                Instantiate(popEffect, balloon.transform.position, Quaternion.identity);
+            }
+            
+            // Play pop sound if assigned
+            if (popSound != null)
+            {
+                AudioSource.PlayClipAtPoint(popSound, balloon.transform.position, 1f);
+            }
+            
+            // Destroy the balloon
+            Destroy(balloon);
+        }
     }
 }
