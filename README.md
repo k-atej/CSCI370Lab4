@@ -62,6 +62,6 @@ Kate worked on the mechanics of the carnival game itself, including resetting th
 
 Joseph worked on getting the Player model and NPC model set up, as well as animations and dialog for the NPC. Joseph created the movement system and the camera follow for the player.
 
-Fin handled the decoration of the game's main scene, including the skybox, other stalls, surfaces, and trees.
+Fin handled the decoration of the game's main scene, including the skybox, other stalls, surfaces, and trees. Fin also made the main menu and pause menu.
 
 
