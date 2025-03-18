@@ -33,11 +33,11 @@ We found it pretty difficult to manage animations and the shader graphs. For the
 
 Attributions:
 
-Men Screen - https://tinyurl.com/ay2apdxn
+Menu Screen - https://tinyurl.com/ay2apdxn
 
 Font - https://www.fontspace.com/chrusty-rock-font-f35152
 
-Music - ???
+Music - https://assetstore.unity.com/packages/audio/music/miscellaneous-bgm-vol-1-21680
 
 Dart Stall - https://sketchfab.com/3d-models/stylized-carnival-booth-d8b4a661d433u494184403c621818a424
 
