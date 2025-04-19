@@ -145,7 +145,7 @@ public class WinManager : MonoBehaviour
             {
                 if (text.name.Contains("WinMessage") || text.name.Contains("Text"))
                 {
-                    text.text = "You Win!\nTotal Wins: " + totalWins;
+                    text.text = "You Win! Press E to Reset\nTotal Wins: " + totalWins;
                 }
             }
             
