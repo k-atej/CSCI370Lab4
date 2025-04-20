@@ -37,7 +37,7 @@ Menu Screen - https://tinyurl.com/ay2apdxn
 
 Font - https://www.fontspace.com/chrusty-rock-font-f35152
 
-Music - https://assetstore.unity.com/packages/audio/music/miscellaneous-bgm-vol-1-21680
+Music - Music from #Uppbeat (free for Creators!): https://uppbeat.io/t/giulio-fazio/marching-band // License code: HXRTUH86UEQ27GEU
 
 Dart Stall - https://sketchfab.com/3d-models/stylized-carnival-booth-d8b4a661d433u494184403c621818a424
 
